@@ -177,5 +177,41 @@ namespace JobApplication
 
         }
 
+        [Test]
+        public void JobApplicationRar()
+        {
+            // 1. Người dùng mở giao diện đăng nhập
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id=\"navbarCollapse\"]/div[2]/div[1]/a")).Click();
+
+            // 2. Nhập thông tin tài khoản đã đăng ký
+            driver.FindElement(By.XPath("//*[@id=\"username\"]")).SendKeys(username);
+            driver.FindElement(By.XPath("//*[@id=\"password\"]")).SendKeys(password);
+
+            // 3. Nhấp vào nút đăng nhập
+            driver.FindElement(By.XPath("/html/body/div/div/div/div/div/form/input[1]")).Click();
+
+            // 4. Nhấn xem công việc ở trang chủ
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id=\"tab-1\"]/div[1]/div/div/div/a")).Click();
+
+            // 5. Nhấn ứng tuyển ngay
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div/div[1]/form/div/div/a")).Click();
+
+            // 6. Tải CV và Cover Letter
+            string CVfilePath = @"D:\\Downloads\\test.rar";
+            driver.FindElement(By.XPath("//*[@id=\"Cv\"]")).SendKeys(CVfilePath);
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id=\"CoverLetter\"]")).SendKeys(CVfilePath);
+
+            // 7. Nhấn Gửi
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div/div[2]/form/div[4]/button")).Click();
+
+            Assert.IsTrue(driver.PageSource.Contains("The Cv field is in an incorrect format."));
+
+        }
+
     }
 }

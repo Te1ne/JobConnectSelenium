@@ -102,3 +102,4 @@ D:\Downloads\selenium\JobApplication\TestProject1\obj\Debug\net8.0\refint\TestPr
 D:\Downloads\selenium\JobApplication\TestProject1\obj\Debug\net8.0\TestProject1.pdb
 D:\Downloads\selenium\JobApplication\TestProject1\obj\Debug\net8.0\TestProject1.genruntimeconfig.cache
 D:\Downloads\selenium\JobApplication\TestProject1\obj\Debug\net8.0\ref\TestProject1.dll
+D:\Downloads\selenium\JobApplication\TestProject1\obj\Debug\net8.0\TestProject1.sourcelink.json
